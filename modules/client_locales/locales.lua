@@ -71,18 +71,19 @@ function init()
 
     installLocales('/locales')
 
-    local userLocaleName = g_settings.get('locale', 'false')
-    if userLocaleName ~= 'false' and setLocale(userLocaleName) then
+    local userLocaleName = g_settings.get('locale', 'en')
+    if userLocaleName ~= 'en' and setLocale(userLocaleName) then
         pdebug('Using configured locale: ' .. userLocaleName)
     else
-        setLocale(defaultLocaleName)
+        setLocale('en')
+        -- Skip the language selection window and go directly to the main interface
         if g_app.hasUpdater() then
             connect(g_app, {
-                onUpdateFinished = createWindow,
+                onUpdateFinished = function() end, -- Do nothing, skip language selection
             })
         else
             connect(g_app, {
-                onRun = createWindow,
+                onRun = function() end, -- Do nothing, skip language selection
             })
         end
     end

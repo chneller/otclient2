@@ -9,20 +9,14 @@ Services = {
     --createAccount = "http://localhost/clientcreateaccount.php", --./client_entergame -- createAccount.lua
 }
 
---[[
+-- Default server configuration for Tibia 7.72
 Servers_init = {
-    ["http://127.0.0.1/login.php"] = {
-        ["port"] = 80,
-        ["protocol"] = 1320,
-        ["httpLogin"] = true
-    },
-    ["ip.net"] = {
+    ["35.199.75.222"] = {
         ["port"] = 7171,
-        ["protocol"] = 860,
+        ["protocol"] = 772,
         ["httpLogin"] = false
     },
 }
-]]
 
 g_app.setName("OTClient - Redemption");
 g_app.setCompactName("otclient");

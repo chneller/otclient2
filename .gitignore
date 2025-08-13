@@ -53,7 +53,7 @@ vc17/
 *.pidb
 *.scc
 *.dll
-*.exe
+# *.exe
 *.exp
 *.lib
 *.bak
