@@ -2191,11 +2191,11 @@ void ProtocolGame::parsePlayerStats(const InputMessagePtr& msg) const
 {
     const uint32_t health = g_game.getFeature(Otc::GameDoubleHealth) ? msg->getU32() : msg->getU16();
     const uint32_t maxHealth = g_game.getFeature(Otc::GameDoubleHealth) ? msg->getU32() : msg->getU16();
-    const uint32_t freeCapacity = g_game.getFeature(Otc::GameDoubleFreeCapacity) ? msg->getU32() / 100.f : msg->getU16() / 100.f;
+    const uint32_t freeCapacity = g_game.getFeature(Otc::GameDoubleFreeCapacity) ? msg->getU32() : msg->getU16();
 
     uint32_t totalCapacity = 0;
     if (g_game.getClientVersion() < 1281 && g_game.getFeature(Otc::GameTotalCapacity)) {
-        totalCapacity = msg->getU32() / 100.f;
+        totalCapacity = msg->getU32();
     }
 
     const uint64_t experience = g_game.getFeature(Otc::GameDoubleExperience) ? msg->getU64() : msg->getU32();
