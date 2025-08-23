@@ -208,7 +208,7 @@ return {
         end
     },
     shadowFloorIntensity              = {
-        value = 30,
+        value = 100,
         action = function(value, options, controller, panels, extraWidgets)
             panels.graphicsEffectsPanel:recursiveGetChildById('shadowFloorIntensity'):setText(string.format(
                 'Shadow floor Intensity: %s%%', value))
@@ -244,7 +244,7 @@ return {
         end
     },
     floorFading                       = {
-        value = 500,
+        value = 0,
         action = function(value, options, controller, panels, extraWidgets)
             panels.graphicsEffectsPanel:recursiveGetChildById('floorFading'):setText(string.format('Floor Fading: %s ms',
                 value))
@@ -349,7 +349,7 @@ return {
         end
     },
     showSpellGroupCooldowns           = {
-        value = true,
+        value = false,
         action = function(value, options, controller, panels, extraWidgets)
             modules.game_cooldown.setSpellGroupCooldownsVisible(value)
         end

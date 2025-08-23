@@ -21,6 +21,7 @@ option(ASAN_ENABLED "Build this target with AddressSanitizer" OFF)
 option(BUILD_STATIC_LIBRARY "Build using static libraries" OFF)
 option(TOGGLE_PRE_COMPILED_HEADER "Use precompiled header (speed up compile)" ON)
 option(SPEED_UP_BUILD_UNITY "Compile using build unity for speed up build" ON)
+option(ENABLE_CONSOLE_WINDOW "Show Windows console window when launching the client" OFF)
 
 # *****************************************************************************
 # Cmake Features
@@ -712,16 +713,28 @@ else() # Linux
 endif()
 
 # *****************************************************************************
-# Enable otclient console only for debug build
+# Windows console window toggle
 # *****************************************************************************
 if(WIN32)
-  set_target_properties(${PROJECT_NAME}
-          PROPERTIES
-          LINK_FLAGS_DEBUG "/SUBSYSTEM:CONSOLE"
-          LINK_FLAGS_RELEASE "/SUBSYSTEM:windows /ENTRY:mainCRTStartup"
-          LINK_FLAGS_RELWITHDEBINFO "/SUBSYSTEM:CONSOLE"
-          LINK_FLAGS_MINSIZEREL "/SUBSYSTEM:windows /ENTRY:mainCRTStartup"
-  )
+  if(ENABLE_CONSOLE_WINDOW)
+    # Keep console window for debug-style builds
+    set_target_properties(${PROJECT_NAME}
+            PROPERTIES
+            LINK_FLAGS_DEBUG "/SUBSYSTEM:CONSOLE"
+            LINK_FLAGS_RELEASE "/SUBSYSTEM:windows /ENTRY:mainCRTStartup"
+            LINK_FLAGS_RELWITHDEBINFO "/SUBSYSTEM:CONSOLE"
+            LINK_FLAGS_MINSIZEREL "/SUBSYSTEM:windows /ENTRY:mainCRTStartup"
+    )
+  else()
+    # Hide console window in all configurations
+    set_target_properties(${PROJECT_NAME}
+            PROPERTIES
+            LINK_FLAGS_DEBUG "/SUBSYSTEM:windows /ENTRY:mainCRTStartup"
+            LINK_FLAGS_RELEASE "/SUBSYSTEM:windows /ENTRY:mainCRTStartup"
+            LINK_FLAGS_RELWITHDEBINFO "/SUBSYSTEM:windows /ENTRY:mainCRTStartup"
+            LINK_FLAGS_MINSIZEREL "/SUBSYSTEM:windows /ENTRY:mainCRTStartup"
+    )
+  endif()
 endif(WIN32)
 
 if(ANDROID)

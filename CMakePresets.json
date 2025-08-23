@@ -20,6 +20,7 @@
         "BUILD_STATIC_LIBRARY": "ON",
         "VCPKG_TARGET_TRIPLET": "x64-windows-static",
         "CMAKE_BUILD_TYPE": "RelWithDebInfo",
+        "ENABLE_CONSOLE_WINDOW": "OFF",
         "OPTIONS_ENABLE_SCCACHE": "ON"
       },
       "architecture": {
@@ -45,6 +46,7 @@
       "generator": "Visual Studio 17 2022",
       "cacheVariables": {
         "CMAKE_BUILD_TYPE": "Debug",
+        "ENABLE_CONSOLE_WINDOW": "ON",
         "DEBUG_LOG": "ON",
         "ASAN_ENABLED": "ON",
         "BUILD_STATIC_LIBRARY": "OFF",
@@ -78,6 +80,7 @@
       "description": "Release Mode with ASAN",
       "cacheVariables": {
         "ASAN_ENABLED": "ON",
+        "ENABLE_CONSOLE_WINDOW": "OFF",
         "BUILD_STATIC_LIBRARY": "OFF",
         "VCPKG_TARGET_TRIPLET": "x64-windows"
       },
@@ -93,6 +96,7 @@
       "description": "Build Debug Mode",
       "cacheVariables": {
         "CMAKE_BUILD_TYPE": "Debug",
+        "ENABLE_CONSOLE_WINDOW": "ON",
         "DEBUG_LOG": "ON",
         "ASAN_ENABLED": "ON",
         "BUILD_STATIC_LIBRARY": "OFF",

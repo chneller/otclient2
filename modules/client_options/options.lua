@@ -1,4 +1,5 @@
 local options = dofile("data_options")
+local FEATURE_FLAGS = dofile("feature_flags")
 panels = {
     generalPanel = nil,
     graphicsPanel = nil,
@@ -211,6 +212,45 @@ function controller:onInit()
 
     panels.misc = g_ui.loadUI('styles/misc/misc', controller.ui.optionsTabContent)
     panels.miscHelp = g_ui.loadUI('styles/misc/help', controller.ui.optionsTabContent)
+
+    -- Hide specific Interface options via feature flags (non-destructive)
+    if FEATURE_FLAGS and panels.interface then
+        local actionBarRow = panels.interface:recursiveGetChildById('showActionbar')
+        if actionBarRow and FEATURE_FLAGS.show_actionbar_option == false then
+            local rowContainer = actionBarRow:getParent()
+            if rowContainer then rowContainer:setVisible(false) end
+        end
+
+        local spellCooldownsRow = panels.interface:recursiveGetChildById('showSpellGroupCooldowns')
+        if spellCooldownsRow and FEATURE_FLAGS.show_spell_group_cooldowns_option == false then
+            local rowContainer2 = spellCooldownsRow:getParent()
+            if rowContainer2 then rowContainer2:setVisible(false) end
+        end
+    end
+
+    -- Hide Controls delay sliders if disabled in feature flags
+    if FEATURE_FLAGS and panels.generalPanel and FEATURE_FLAGS.show_controls_delay_sliders == false then
+        local ids = { 'hotkeyDelay', 'walkTurnDelay', 'walkTeleportDelay', 'walkStairsDelay' }
+        for _, cid in ipairs(ids) do
+            local slider = panels.generalPanel:recursiveGetChildById(cid)
+            if slider then
+                local container = slider:getParent()
+                if container then container:setVisible(false) end
+            end
+        end
+    end
+
+    -- Hide Console "Show levels" option via feature flag
+    if FEATURE_FLAGS and panels.interfaceConsole and FEATURE_FLAGS.show_console_levels_option == false then
+        local ids = { 'showLevelsInConsole', 'showLevels' }
+        for _, cid in ipairs(ids) do
+            local levels = panels.interfaceConsole:recursiveGetChildById(cid)
+            if levels then
+                local container = levels:getParent()
+                if container then container:setVisible(false) end
+            end
+        end
+    end
 
     self.ui:hide()
 

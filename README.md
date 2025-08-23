@@ -1,4 +1,4 @@
-<h1><img src="https://github.com/mehah/otclient/blob/main/data/images/clienticon.png?raw=true" width="32" alt="logo"/> OTClient - Redemption</h1>
+<h1><img src="https://github.com/mehah/otclient/blob/main/data/images/clienticon.png?raw=true" width="32" alt="logo"/> MBMB</h1>
 
 [![Discord Shield](https://discordapp.com/api/guilds/888062548082061433/widget.png?style=shield)](https://discord.gg/tUjTBZzMCy)
 [![Build - Ubuntu](https://github.com/mehah/otclient/actions/workflows/build-ubuntu.yml/badge.svg)](https://github.com/mehah/otclient/actions/workflows/build-ubuntu.yml)
@@ -332,7 +332,7 @@ Beyond of it's flexibility with scripts, otclient comes with tons of other featu
   - by [@conde2](https://github.com/conde2)
   - UIQrCode: 
     - code-border: 2
-    - code: Hail OTClient Redemption - Conde2 Dev
+    - code: Hail MBMB - Conde2 Dev
 
 </details>
   
@@ -429,7 +429,7 @@ Beyond of it's flexibility with scripts, otclient comes with tons of other featu
    <summary>Browser Client by @OTArchive</summary>
 
   - by [@OTArchive](https://github.com/OTArchive)
-  - wiki: https://github.com/OTArchive/otclient-web/wiki/Guia-%E2%80%90-OTClient-Redemption-Web
+  - wiki: https://github.com/OTArchive/otclient-web/wiki/Guia-%E2%80%90-MBMB-Web
   
   - https://github.com/user-attachments/assets/e8ab58c7-1be3-4c76-bc6d-bd831e846826
 
@@ -539,9 +539,9 @@ Have found a bug? Please create an issue in our [bug tracker](https://github.com
 | TFS 1.5  <br> (8.0 / 8.60) 	| Downgrade nekiro / <br>MillhioreBT     	| [force-new-walking-formula: true](https://github.com/mehah/otclient/blob/cf7badda978de88cb3724615688e3d9da2ff4207/data/setup.otml#L21)        <br>   [item-ticks-per-frame: 500](https://github.com/mehah/otclient/blob/cf7badda978de88cb3724615688e3d9da2ff4207/data/setup.otml#L32)        	| ✅             	|
 | TFS 1.4.2 <br> (10.98)   	| Release Otland              	|                                              	| ✅             	|
 | TFS 1.6  <br>(13.10)     	| Main repo <br> otland (2024)     	| [See wiki](https://github.com/mehah/otclient/wiki/Tutorial-to-Use-OTC-in-TFS-main) 	| ✅             	|
-| Canary  <br> (13.21 / 13.32 / 13.40)       	| OpenTibiaBr               	| [See Wiki](https://docs.opentibiabr.com/opentibiabr/projects/otclient-redemption/about#how-to-connect-on-canary-with-otclient-redemption)            	| ✅             	|
-| Canary <br> (14.00 ~ 14.12)        	| OpenTibiaBr              	| [See Wiki](https://docs.opentibiabr.com/opentibiabr/projects/otclient-redemption/about#how-to-connect-on-canary-with-otclient-redemption)           	| ✅             	|
-| Canary <br> (15.00 ~ 15.10)        	| OpenTibiaBr              	| [See Wiki](https://docs.opentibiabr.com/opentibiabr/projects/otclient-redemption/about#how-to-connect-on-canary-with-otclient-redemption)           	| ❌             	|
+| Canary  <br> (13.21 / 13.32 / 13.40)       	| OpenTibiaBr               	| [See Wiki](https://docs.opentibiabr.com/opentibiabr/projects/mbmb/about#how-to-connect-on-canary-with-mbmb)            	| ✅             	|
+| Canary <br> (14.00 ~ 14.12)        	| OpenTibiaBr              	| [See Wiki](https://docs.opentibiabr.com/opentibiabr/projects/mbmb/about#how-to-connect-on-canary-with-mbmb)           	| ✅             	|
+| Canary <br> (15.00 ~ 15.10)        	| OpenTibiaBr              	| [See Wiki](https://docs.opentibiabr.com/opentibiabr/projects/mbmb/about#how-to-connect-on-canary-with-mbmb)           	| ❌             	|
 
 
 
